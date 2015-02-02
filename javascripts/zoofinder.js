@@ -82,10 +82,10 @@ var ZooFinder = (function () {
           parseInt(cellElement.data('y'))
         )
 
-        button.setSelected(true)
-
         cell.setAnimal(button.animal)
         cell.setSelected(true)
+
+        button.setSelected(true)
       },
 
       ondropdeactivate: function (event) {
