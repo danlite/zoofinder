@@ -1,0 +1,161 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);
+
+@mixin biome($name, $color) {
+  &.biome-#{$name} {
+    .cell {
+      background-color: $color;
+
+      &.selected { background-color: darken($color, 15%) }
+    }
+
+    &.droppable {
+      .cell.droppable {
+        background-color: lighten($color, 15%)
+      }
+    }
+  }
+}
+
+@mixin rarity($name, $color) {
+  &.rarity-#{$name} {
+    background-color: $color;
+
+    border-color: darken($color, 15%);
+  }
+}
+
+@mixin animal {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@mixin no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  cursor: default;
+}
+
+$small-screen: "(max-width: 767px)";
+
+body {
+  @include no-select;
+  font-family: Oswald, HelveticaNeue, Helvetica, Arial, sans-serif;
+}
+
+.zoo-grid {
+  background-color: #222;
+  padding: 1px 0 0 1px;
+  display: inline-block;
+
+  @include biome(farm, #4d9623);
+  @include biome(outback, #a9774b);
+  @include biome(savanna, #b79e3c);
+  @include biome(northern, #4b6f3b);
+  @include biome(polar, #5e8e94);
+  @include biome(jungle, #34753e);
+  @include biome(jurassic, #754331);
+  @include biome(ice-age, #a1b8ac);
+  @include biome(city, #626668);
+  @include biome(moon, #726b68);
+  @include biome(mars, #c66a5a);
+
+  .cell {
+    float: left;
+    height: 100px;
+    width: 100px;
+    background-size: 75px;
+    background-color: #eee;
+    margin: 0 1px 1px 0;
+    border: 1px outset rgba(128,128,128, 0.5);
+
+    cursor: pointer;
+
+    @include animal;
+
+    @media #{$small-screen} {
+      height: 50px;
+      width: 50px;
+      background-size: 38px;
+    }
+
+    &:nth-child(5n+1) { clear: left; }
+
+    &.selected { border: 1px solid rgba(64,64,64, 0.5); }
+
+    &.bux-hint { background-color: #c5ffff; }
+    &.best-hint { background-color: #ffd725; }
+    &.guaranteed-hint { background-color: lighten(#ffd725, 20%); }
+  }
+}
+
+.page-header {
+  @media #{$small-screen} {
+    margin: 10px 0 10px;
+
+    h1 {
+      text-align: center;
+      margin: 0;
+    }
+  }
+}
+
+#zoo-column {
+  text-align: center;
+}
+
+#roster-container, #zoo-controls {
+  text-align: center;
+}
+
+#phantom {
+  position: absolute;
+
+  height: 50px;
+  width: 50px;
+
+  > div {
+    height: 100%;
+    width: 100%;
+    background-size: 38px;
+
+    margin-top: -125%;
+    margin-left: -50%;
+
+    @include animal;
+  }
+}
+
+.animal-button {
+  height: 100px;
+  max-width: 100px;
+  background-size: 75px;
+  margin: 5px auto;
+
+  border: 1px solid;
+  padding: 1px;
+
+  opacity: 0.4;
+  .no-touch &:hover { opacity: 0.7; }
+  
+  .no-touch &.selected, &.selected {
+    opacity: 1.0;
+    border-width: 2px;
+    padding: 0;
+  }
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  @include animal;
+
+  @include rarity(common, #acffaa);
+  @include rarity(rare, #9fdafd);
+  @include rarity(mythical, #ffd5fe);
+  @include rarity(bux, #c5ffff);
+}

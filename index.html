@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+  <!--[if IE]>
+      <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <![endif]-->
+
+</head>
+
+<body class="no-touch">
+<div class="container">
+  <div class="page-header">
+    <h1>Zoo Finder</h1>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8" id="zoo-column">
+      <div id="zoo"></div>
+    </div>
+    <div class="col-md-4">
+      <div class="row" id="zoo-controls">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <button class="btn btn-warning" id="reset-button">Reset Grid</button>
+            <!-- <button class="btn btn-success" id="probability-button">Show Probability</button> -->
+            <!-- <button class="btn btn-primary" id="arrange-button">Arrange Animals</button> -->
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <select class="form-control" id="biome-list"></select>
+      </div>
+      <!-- 
+      <div class="form-group">
+        <select class="form-control" id="animal-list"></select>
+      </div>
+      -->
+      <!-- Animal generation
+      <div class="form-group">
+        <button class="btn btn-primary" id="generate-output">Generate Animal</button>
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" id="debug-output" readonly="readonly"></textarea>
+      </div>
+      -->
+      <div class="row" id="roster-container">
+        <div class="col-lg-4 col-md-6 col-sm-4 col-xs-4">
+          <div class="animal-button rarity-common"></div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-4 col-xs-4">
+          <div class="animal-button rarity-common"></div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-4 col-xs-4">
+          <div class="animal-button rarity-common"></div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-3 col-xs-4">
+          <div class="animal-button rarity-rare"></div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-3 col-xs-4">
+          <div class="animal-button rarity-rare"></div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-3 col-xs-4">
+          <div class="animal-button rarity-mythical"></div>
+        </div>
+        <div class="col-lg-12 col-md-6 col-sm-3 col-xs-12">
+          <div class="animal-button rarity-bux"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/0.5.2/chroma.min.js"></script>
+<script type="text/javascript" src="/javascripts/fastclick.js"></script>
+<script type="text/javascript" src="/javascripts/interact-1.2.2.js"></script>
+<script type="text/javascript" src="/javascripts/biome.js"></script>
+<script type="text/javascript" src="/javascripts/animal.js"></script>
+<script type="text/javascript" src="/javascripts/grid.js"></script>
+<script type="text/javascript" src="/javascripts/cell.js"></script>
+<script type="text/javascript" src="/javascripts/zoofinder.js"></script>
+<script type="text/javascript" src="/javascripts/main.js"></script>
+
+</html>
