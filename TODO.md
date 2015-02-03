@@ -1,6 +1,12 @@
 # TODO
 
-- drag (to copy) animals from one tile to another
-- show shape icon (e.g. tetromino) somewhere on animal buttons
-- hide 100% on discovered tiles
+- add the latest area
+- hints to tap and drag animals
+- remove annoying "no arrangements!" alert
 - preview animal for 100% tiles (if there is exactly one)
+- hover over animal button to show best probability on grid
+- remove animals from grid when button is deselected
+- drag (to copy) animals from one tile to another
+- hide 100% on discovered tiles
+- show shape icon (e.g. tetromino) somewhere on animal buttons
+- disable dragging cursor
