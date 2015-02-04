@@ -27,10 +27,16 @@ var GridCell = (function () {
   GridCell.prototype.setAnimal = function (animal) {
     var imagePath
 
+    if (this.animal == animal)
+      return;
+
     this.animal = animal
 
     if (animal)
       imagePath = 'images/animals/' + animal.identifier + '.png'
+
+    if (!animal)
+      this.resetHints()
 
     this.element.css('background-image', imagePath ? 'url(' + imagePath + ')' : '')
 
