@@ -121,10 +121,20 @@ var ZooFinder = (function () {
       self.animalButtons.push(animalButton)
 
       $(animalButton).on('change', function () {
-        if (animalButton.selected)
-          self.selectedAnimals = _.union(self.selectedAnimals, animalButton.animal)
-        else
-          self.selectedAnimals = _.without(self.selectedAnimals, animalButton.animal)
+        var animal = animalButton.animal
+
+        if (animalButton.selected) {
+          self.selectedAnimals = _.union(self.selectedAnimals, animal)
+        } else {
+          self.selectedAnimals = _.without(self.selectedAnimals, animal)
+
+          self.grid.each(function (cell) {
+            if (cell.animal == animal) {
+              cell.setAnimal(null)
+              cell.setSelected(false)
+            }
+          })
+        }
 
         if (self.showingProbabilities)
           self.refreshProbabilities()
