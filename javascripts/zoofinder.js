@@ -54,11 +54,13 @@ var ZooFinder = (function () {
     this.animalButtons = []
     this.showingProbabilities = true
 
-    $(grid).on('cell:change', _.debounce(function () {
-        if (self.showingProbabilities)
-          self.displayProbabilities()
-        }, 10)
-    )
+    this.refreshProbabilities = _.debounce(function () {
+      if (self.showingProbabilities) {
+        self.displayProbabilities()
+      }
+    }, 10)
+
+    $(grid).on('cell:change', this.refreshProbabilities)
 
     interact('.zoo-grid').dropzone({
 
@@ -125,7 +127,7 @@ var ZooFinder = (function () {
           self.selectedAnimals = _.without(self.selectedAnimals, animalButton.animal)
 
         if (self.showingProbabilities)
-          self.displayProbabilities()
+          self.refreshProbabilities()
       })
     })
 
