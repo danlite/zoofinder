@@ -1,3 +1,5 @@
+@import "compass/css3/transform";
+
 @import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);
 
 @mixin biome($name, $color) {
@@ -7,12 +9,7 @@
       border-color: darken($color, 40%);
 
       &.selected { background-color: darken($color, 15%) }
-    }
-
-    &.droppable {
-      .cell.droppable {
-        background-color: lighten($color, 15%)
-      }
+      &.droppable { background-color: lighten($color, 15%) }
     }
   }
 }
@@ -57,12 +54,17 @@ body {
   margin-bottom: $footer-height;
 }
 
+.bg-info {
+  padding: 10px;
+  text-align: center;
+  margin: 5px 0;
+}
+
 footer#footer {
   position: absolute;
   bottom: 0;
   width: 100%;
 
-  // height: $footer-height;
   background-color: #f5f5f5;
 
   .text-muted {
@@ -71,6 +73,7 @@ footer#footer {
 }
 
 .zoo-grid {
+  position: relative;
   display: inline-block;
 
   @include biome(farm, #4d9623);
@@ -84,6 +87,35 @@ footer#footer {
   @include biome(city, #626668);
   @include biome(moon, #726b68);
   @include biome(mars, #c66a5a);
+
+  .drop-target-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0;
+    background-color: rgba(230, 230, 230, 0.8);
+    transition: 0.1s opacity;
+
+    .title-container {
+      position: relative;
+      top: 50%;
+      @include transform(translateY(-50%));
+
+      h2 { margin: 0; }
+    }
+  }
+
+  border: 2px dashed rgba(0, 0, 0, 0);
+  transition: 0.1s border-color;
+
+  &.droppable {
+    border-color: #000;
+
+    .drop-target-overlay {
+      opacity: 1.0;
+    }
+  }
 
   .cell {
     float: left;
@@ -142,6 +174,8 @@ footer#footer {
 
   height: 50px;
   width: 50px;
+
+  pointer-events: none;
 
   > div {
     height: 100%;

@@ -43,6 +43,10 @@ var ZooFinder = (function () {
 
   var ZooFinder = function (grid) {
     var self = this
+    var toggleDropTargetOverlay = function (toggle) {
+      self.grid.element.toggleClass('droppable front-and-center', toggle)
+      self.grid.element.find('.drop-target-overlay h2').toggleClass('swing animated', toggle)
+    }
 
     this.grid = grid
     this.animals = []
@@ -56,19 +60,39 @@ var ZooFinder = (function () {
         }, 10)
     )
 
-    interact('.zoo-grid .cell').dropzone({
+    interact('.zoo-grid').dropzone({
 
       ondropactivate: function (event) {
+        toggleDropTargetOverlay(true)
         self.grid.element.find('.cell').removeClass('droppable')
-        self.grid.element.addClass('droppable')
+        $('html, body').animate({ scrollTop: 0 })
       },
       
       ondragenter: function (event) {
+        toggleDropTargetOverlay(false)
+      },
+
+      ondragleave: function (event) {
+        toggleDropTargetOverlay(true)
+      },
+
+      ondropdeactivate: function (event) {
+        toggleDropTargetOverlay(false)
+        self.grid.element.find('.cell').removeClass('droppable')
+      }
+
+    })
+
+    interact('.zoo-grid .cell').dropzone({
+      
+      ondragenter: function (event) {
         $(event.target).addClass('droppable')
+        toggleDropTargetOverlay(false)
       },
 
       ondragleave: function (event) {
         $(event.target).removeClass('droppable')
+        toggleDropTargetOverlay(true)
       },
 
       ondrop: function (event) {
@@ -86,10 +110,6 @@ var ZooFinder = (function () {
         cell.setSelected(true)
 
         button.setSelected(true)
-      },
-
-      ondropdeactivate: function (event) {
-        self.grid.element.removeClass('droppable')
       }
 
     })

@@ -1,11 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300);
-/* line 46, ../sass/screen.scss */
+/* line 43, ../sass/screen.scss */
 html {
   position: relative;
   min-height: 100%;
 }
 
-/* line 53, ../sass/screen.scss */
+/* line 50, ../sass/screen.scss */
 body {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -18,166 +18,207 @@ body {
   margin-bottom: 90px;
 }
 
-/* line 60, ../sass/screen.scss */
+/* line 57, ../sass/screen.scss */
+.bg-info {
+  padding: 10px;
+  text-align: center;
+  margin: 5px 0;
+}
+
+/* line 63, ../sass/screen.scss */
 footer#footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   background-color: #f5f5f5;
 }
-/* line 68, ../sass/screen.scss */
+/* line 70, ../sass/screen.scss */
 footer#footer .text-muted {
   margin: 20px 0;
 }
 
-/* line 73, ../sass/screen.scss */
+/* line 75, ../sass/screen.scss */
 .zoo-grid {
+  position: relative;
   display: inline-block;
+  border: 2px dashed transparent;
+  transition: 0.1s border-color;
 }
-/* line 5, ../sass/screen.scss */
+/* line 7, ../sass/screen.scss */
 .zoo-grid.biome-farm .cell {
   background-color: #4d9623;
   border-color: black;
 }
-/* line 9, ../sass/screen.scss */
+/* line 11, ../sass/screen.scss */
 .zoo-grid.biome-farm .cell.selected {
   background-color: #2d5815;
 }
-/* line 13, ../sass/screen.scss */
-.zoo-grid.biome-farm.droppable .cell.droppable {
+/* line 12, ../sass/screen.scss */
+.zoo-grid.biome-farm .cell.droppable {
   background-color: #6ed036;
 }
-/* line 5, ../sass/screen.scss */
+/* line 7, ../sass/screen.scss */
 .zoo-grid.biome-outback .cell {
   background-color: #a9774b;
   border-color: #1c140c;
 }
-/* line 9, ../sass/screen.scss */
+/* line 11, ../sass/screen.scss */
 .zoo-grid.biome-outback .cell.selected {
   background-color: #745233;
 }
-/* line 13, ../sass/screen.scss */
-.zoo-grid.biome-outback.droppable .cell.droppable {
+/* line 12, ../sass/screen.scss */
+.zoo-grid.biome-outback .cell.droppable {
   background-color: #c59e7c;
 }
-/* line 5, ../sass/screen.scss */
+/* line 7, ../sass/screen.scss */
 .zoo-grid.biome-savanna .cell {
   background-color: #b79e3c;
   border-color: #1d190a;
 }
-/* line 9, ../sass/screen.scss */
+/* line 11, ../sass/screen.scss */
 .zoo-grid.biome-savanna .cell.selected {
   background-color: #7d6c29;
 }
-/* line 13, ../sass/screen.scss */
-.zoo-grid.biome-savanna.droppable .cell.droppable {
+/* line 12, ../sass/screen.scss */
+.zoo-grid.biome-savanna .cell.droppable {
   background-color: #d0bc70;
 }
-/* line 5, ../sass/screen.scss */
+/* line 7, ../sass/screen.scss */
 .zoo-grid.biome-northern .cell {
   background-color: #4b6f3b;
   border-color: black;
 }
-/* line 9, ../sass/screen.scss */
+/* line 11, ../sass/screen.scss */
 .zoo-grid.biome-northern .cell.selected {
   background-color: #293d20;
 }
-/* line 13, ../sass/screen.scss */
-.zoo-grid.biome-northern.droppable .cell.droppable {
+/* line 12, ../sass/screen.scss */
+.zoo-grid.biome-northern .cell.droppable {
   background-color: #6da156;
 }
-/* line 5, ../sass/screen.scss */
+/* line 7, ../sass/screen.scss */
 .zoo-grid.biome-polar .cell {
   background-color: #5e8e94;
   border-color: #0f1617;
 }
-/* line 9, ../sass/screen.scss */
+/* line 11, ../sass/screen.scss */
 .zoo-grid.biome-polar .cell.selected {
   background-color: #406165;
 }
-/* line 13, ../sass/screen.scss */
-.zoo-grid.biome-polar.droppable .cell.droppable {
+/* line 12, ../sass/screen.scss */
+.zoo-grid.biome-polar .cell.droppable {
   background-color: #8ab0b5;
 }
-/* line 5, ../sass/screen.scss */
+/* line 7, ../sass/screen.scss */
 .zoo-grid.biome-jungle .cell {
   background-color: #34753e;
   border-color: black;
 }
-/* line 9, ../sass/screen.scss */
+/* line 11, ../sass/screen.scss */
 .zoo-grid.biome-jungle .cell.selected {
   background-color: #1c4022;
 }
-/* line 13, ../sass/screen.scss */
-.zoo-grid.biome-jungle.droppable .cell.droppable {
+/* line 12, ../sass/screen.scss */
+.zoo-grid.biome-jungle .cell.droppable {
   background-color: #4caa5a;
 }
-/* line 5, ../sass/screen.scss */
+/* line 7, ../sass/screen.scss */
 .zoo-grid.biome-jurassic .cell {
   background-color: #754331;
   border-color: black;
 }
-/* line 9, ../sass/screen.scss */
+/* line 11, ../sass/screen.scss */
 .zoo-grid.biome-jurassic .cell.selected {
   background-color: #3f241a;
 }
-/* line 13, ../sass/screen.scss */
-.zoo-grid.biome-jurassic.droppable .cell.droppable {
+/* line 12, ../sass/screen.scss */
+.zoo-grid.biome-jurassic .cell.droppable {
   background-color: #ab6248;
 }
-/* line 5, ../sass/screen.scss */
+/* line 7, ../sass/screen.scss */
 .zoo-grid.biome-ice-age .cell {
   background-color: #a1b8ac;
   border-color: #3d5046;
 }
-/* line 9, ../sass/screen.scss */
+/* line 11, ../sass/screen.scss */
 .zoo-grid.biome-ice-age .cell.selected {
   background-color: #759786;
 }
-/* line 13, ../sass/screen.scss */
-.zoo-grid.biome-ice-age.droppable .cell.droppable {
+/* line 12, ../sass/screen.scss */
+.zoo-grid.biome-ice-age .cell.droppable {
   background-color: #cdd9d2;
 }
-/* line 5, ../sass/screen.scss */
+/* line 7, ../sass/screen.scss */
 .zoo-grid.biome-city .cell {
   background-color: #626668;
   border-color: black;
 }
-/* line 9, ../sass/screen.scss */
+/* line 11, ../sass/screen.scss */
 .zoo-grid.biome-city .cell.selected {
   background-color: #3d3f41;
 }
-/* line 13, ../sass/screen.scss */
-.zoo-grid.biome-city.droppable .cell.droppable {
+/* line 12, ../sass/screen.scss */
+.zoo-grid.biome-city .cell.droppable {
   background-color: #888c8f;
 }
-/* line 5, ../sass/screen.scss */
+/* line 7, ../sass/screen.scss */
 .zoo-grid.biome-moon .cell {
   background-color: #726b68;
   border-color: #070707;
 }
-/* line 9, ../sass/screen.scss */
+/* line 11, ../sass/screen.scss */
 .zoo-grid.biome-moon .cell.selected {
   background-color: #4a4544;
 }
-/* line 13, ../sass/screen.scss */
-.zoo-grid.biome-moon.droppable .cell.droppable {
+/* line 12, ../sass/screen.scss */
+.zoo-grid.biome-moon .cell.droppable {
   background-color: #98918e;
 }
-/* line 5, ../sass/screen.scss */
+/* line 7, ../sass/screen.scss */
 .zoo-grid.biome-mars .cell {
   background-color: #c66a5a;
   border-color: #3e1c16;
 }
-/* line 9, ../sass/screen.scss */
+/* line 11, ../sass/screen.scss */
 .zoo-grid.biome-mars .cell.selected {
   background-color: #9d4636;
 }
-/* line 13, ../sass/screen.scss */
-.zoo-grid.biome-mars.droppable .cell.droppable {
+/* line 12, ../sass/screen.scss */
+.zoo-grid.biome-mars .cell.droppable {
   background-color: #da9d93;
 }
-/* line 88, ../sass/screen.scss */
+/* line 91, ../sass/screen.scss */
+.zoo-grid .drop-target-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  background-color: rgba(230, 230, 230, 0.8);
+  transition: 0.1s opacity;
+}
+/* line 100, ../sass/screen.scss */
+.zoo-grid .drop-target-overlay .title-container {
+  position: relative;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 105, ../sass/screen.scss */
+.zoo-grid .drop-target-overlay .title-container h2 {
+  margin: 0;
+}
+/* line 112, ../sass/screen.scss */
+.zoo-grid.droppable {
+  border-color: #000;
+}
+/* line 115, ../sass/screen.scss */
+.zoo-grid.droppable .drop-target-overlay {
+  opacity: 1.0;
+}
+/* line 120, ../sass/screen.scss */
 .zoo-grid .cell {
   float: left;
   height: 100px;
@@ -190,75 +231,76 @@ footer#footer .text-muted {
   background-position: center;
 }
 @media (max-width: 767px) {
-  /* line 88, ../sass/screen.scss */
+  /* line 120, ../sass/screen.scss */
   .zoo-grid .cell {
     height: 50px;
     width: 50px;
     background-size: 38px;
   }
 }
-/* line 108, ../sass/screen.scss */
+/* line 140, ../sass/screen.scss */
 .zoo-grid .cell:nth-child(5n+1) {
   clear: left;
 }
-/* line 110, ../sass/screen.scss */
+/* line 142, ../sass/screen.scss */
 .zoo-grid .cell:nth-child(5n+1) {
   border-left-width: 2px;
 }
-/* line 111, ../sass/screen.scss */
+/* line 143, ../sass/screen.scss */
 .zoo-grid .cell:nth-child(-n+5) {
   border-top-width: 2px;
 }
-/* line 112, ../sass/screen.scss */
+/* line 144, ../sass/screen.scss */
 .zoo-grid .cell:nth-child(5n) {
   border-right-width: 2px;
 }
-/* line 113, ../sass/screen.scss */
+/* line 145, ../sass/screen.scss */
 .zoo-grid .cell:nth-child(n+24) {
   border-bottom-width: 2px;
 }
-/* line 115, ../sass/screen.scss */
+/* line 147, ../sass/screen.scss */
 .zoo-grid .cell.bux-hint {
   background-color: #c5ffff;
 }
-/* line 116, ../sass/screen.scss */
+/* line 148, ../sass/screen.scss */
 .zoo-grid .cell.best-hint {
   background-color: #ffd725;
 }
-/* line 117, ../sass/screen.scss */
+/* line 149, ../sass/screen.scss */
 .zoo-grid .cell.guaranteed-hint {
   background-color: #ffea8b;
 }
 
 @media (max-width: 767px) {
-  /* line 121, ../sass/screen.scss */
+  /* line 153, ../sass/screen.scss */
   .page-header {
     margin: 10px 0 10px;
   }
-  /* line 125, ../sass/screen.scss */
+  /* line 157, ../sass/screen.scss */
   .page-header h1 {
     text-align: center;
     margin: 0;
   }
 }
 
-/* line 132, ../sass/screen.scss */
+/* line 164, ../sass/screen.scss */
 #zoo-column {
   text-align: center;
 }
 
-/* line 136, ../sass/screen.scss */
+/* line 168, ../sass/screen.scss */
 #roster-container, #zoo-controls {
   text-align: center;
 }
 
-/* line 140, ../sass/screen.scss */
+/* line 172, ../sass/screen.scss */
 #phantom {
   position: absolute;
   height: 50px;
   width: 50px;
+  pointer-events: none;
 }
-/* line 146, ../sass/screen.scss */
+/* line 180, ../sass/screen.scss */
 #phantom > div {
   height: 100%;
   width: 100%;
@@ -269,7 +311,7 @@ footer#footer .text-muted {
   background-position: center;
 }
 
-/* line 158, ../sass/screen.scss */
+/* line 192, ../sass/screen.scss */
 .animal-button {
   height: 100px;
   max-width: 100px;
@@ -283,32 +325,32 @@ footer#footer .text-muted {
   background-repeat: no-repeat;
   background-position: center;
 }
-/* line 168, ../sass/screen.scss */
+/* line 202, ../sass/screen.scss */
 .no-touch .animal-button:hover {
   opacity: 0.7;
 }
-/* line 170, ../sass/screen.scss */
+/* line 204, ../sass/screen.scss */
 .no-touch .animal-button.selected, .animal-button.selected {
   opacity: 1.0;
   border-width: 2px;
   padding: 0;
 }
-/* line 21, ../sass/screen.scss */
+/* line 18, ../sass/screen.scss */
 .animal-button.rarity-common {
   background-color: #acffaa;
   border-color: #61ff5d;
 }
-/* line 21, ../sass/screen.scss */
+/* line 18, ../sass/screen.scss */
 .animal-button.rarity-rare {
   background-color: #9fdafd;
   border-color: #54bdfb;
 }
-/* line 21, ../sass/screen.scss */
+/* line 18, ../sass/screen.scss */
 .animal-button.rarity-mythical {
   background-color: #ffd5fe;
   border-color: #ff89fc;
 }
-/* line 21, ../sass/screen.scss */
+/* line 18, ../sass/screen.scss */
 .animal-button.rarity-bux {
   background-color: #c5ffff;
   border-color: #78ffff;

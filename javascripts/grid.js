@@ -1,5 +1,7 @@
 var ZooGrid = (function () {
 
+  var containerElement
+
   var addCell = function (row, col) {
     var self = this
     var cell = new GridCell(this)
@@ -8,7 +10,7 @@ var ZooGrid = (function () {
 
     this.cellRows[row].push(cell)
 
-    this.element.addClass('zoo-grid').append(cell.element)
+    containerElement.append(cell.element)
     cell.element.on('click', function (event) {
       cell.setSelected(!cell.selected)
     })
@@ -25,10 +27,9 @@ var ZooGrid = (function () {
     this.rows = 5
     this.columns = 5
 
-    if (_.isString(element))
-      element = $(element)
+    this.element = $(element).addClass('zoo-grid')
 
-    this.element = element
+    containerElement = $('<div>').addClass('cell-container').appendTo(this.element)
 
     for (var row = 0; row < this.rows; row++) {
       this.cellRows.push([])
@@ -36,6 +37,7 @@ var ZooGrid = (function () {
         addCell.call(this, row, col)
       }
     }
+    $('<div>').addClass('clearfix').appendTo(containerElement)
   }
 
   ZooGrid.prototype.setBiome = function (biome) {
