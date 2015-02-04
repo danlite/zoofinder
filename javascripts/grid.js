@@ -40,6 +40,15 @@ var ZooGrid = (function () {
     $('<div>').addClass('clearfix').appendTo(containerElement)
   }
 
+  ZooGrid.prototype.setError = function (err) {
+    if (this.error == err)
+      return;
+
+    this.error = err;
+
+    this.element.toggleClass('animated shake', this.error)
+  }
+
   ZooGrid.prototype.setBiome = function (biome) {
     if (!biome)
       return

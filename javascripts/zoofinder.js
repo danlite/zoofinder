@@ -242,11 +242,12 @@ var ZooFinder = (function () {
         cell.element.text('')
       })
 
-      if (this.selectedAnimals.length > 0)
-        alert('No possible arrangements!')
+      this.grid.setError(this.selectedAnimals.length > 0)
 
       return
     }
+
+    this.grid.setError(false)
 
     // {
     //   "1,2": 3,
@@ -316,9 +317,11 @@ var ZooFinder = (function () {
     var arrangements = allPossibleArrangements.call(this)
 
     if (arrangements.length == 0 && self.selectedAnimals.length > 0) {
-      alert('No possible arrangements!')
+      self.grid.setError(true)
       return
     }
+
+    self.grid.setError(false)
 
     var arrangement = _.sample(arrangements)
 
