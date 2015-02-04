@@ -4,6 +4,7 @@
   &.biome-#{$name} {
     .cell {
       background-color: $color;
+      border-color: darken($color, 40%);
 
       &.selected { background-color: darken($color, 15%) }
     }
@@ -70,8 +71,6 @@ footer#footer {
 }
 
 .zoo-grid {
-  background-color: #222;
-  padding: 1px 0 0 1px;
   display: inline-block;
 
   @include biome(farm, #4d9623);
@@ -92,8 +91,7 @@ footer#footer {
     width: 100px;
     background-size: 75px;
     background-color: #eee;
-    margin: 0 1px 1px 0;
-    border: 1px outset rgba(128,128,128, 0.5);
+    border: 1px solid #555;
 
     cursor: pointer;
 
@@ -105,9 +103,14 @@ footer#footer {
       background-size: 38px;
     }
 
-    &:nth-child(5n+1) { clear: left; }
+    $grid-size: 5;
 
-    &.selected { border: 1px solid rgba(64,64,64, 0.5); }
+    &:nth-child(#{$grid-size}n+1) { clear: left; }
+
+    &:nth-child(#{$grid-size}n+1) { border-left-width: 2px; }
+    &:nth-child(-n+#{$grid-size}) { border-top-width: 2px; }
+    &:nth-child(#{$grid-size}n)   { border-right-width: 2px; }
+    &:nth-child(n+#{$grid-size * $grid-size - 1}) { border-bottom-width: 2px; }
 
     &.bux-hint { background-color: #c5ffff; }
     &.best-hint { background-color: #ffd725; }
