@@ -136,6 +136,10 @@ footer#footer {
       background-size: 38px;
     }
 
+    &.selected {
+      .text { display: none; }
+    }
+
     $grid-size: 5;
 
     &:nth-child(#{$grid-size}n+1) { clear: left; }

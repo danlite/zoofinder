@@ -4,6 +4,7 @@ var GridCell = (function () {
     this.grid = grid
     this.selected = false
     this.element = $('<div>').addClass(GridCell.className)
+    this.textElement = $('<span>').addClass('text').appendTo(this.element)
   }
 
   GridCell.prototype.resetHints = function () {
@@ -41,6 +42,13 @@ var GridCell = (function () {
     this.element.css('background-image', imagePath ? 'url(' + imagePath + ')' : '')
 
     $(this).trigger('change')
+  }
+
+  GridCell.prototype.setText = function (text) {
+    if (text)
+      this.textElement.text(text)
+    else
+      this.textElement.text('')
   }
 
   GridCell.className = 'cell'

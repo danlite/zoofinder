@@ -209,7 +209,7 @@ var ZooFinder = (function () {
     })
     this.grid.each(function (cell) {
       cell.resetHints()
-      cell.element.text('')
+      cell.setText('')
     })
   }
 
@@ -254,7 +254,7 @@ var ZooFinder = (function () {
     if (arrangements.length == 0) {
       this.grid.each(function (cell, col, row) {
         cell.resetHints()
-        cell.element.text('')
+        cell.setText('')
       })
 
       this.grid.setError(this.selectedAnimals.length > 0)
@@ -313,7 +313,7 @@ var ZooFinder = (function () {
 
       var percent = cellCount ? cellCount / arrangements.length * 100 : 0
 
-      cell.element.text(percent.toFixed() + '%')
+      cell.setText(percent.toFixed() + '%')
 
       cell.resetHints()
 
