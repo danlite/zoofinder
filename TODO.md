@@ -1,6 +1,5 @@
 # TODO
 
-- add the latest area
 - preview animal for 100% tiles (if there is exactly one)
 - hover over animal button to show best probability on grid
 - drag (to copy) animals from one tile to another

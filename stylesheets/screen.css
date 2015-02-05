@@ -162,6 +162,19 @@ footer#footer .text-muted {
   background-color: #888c8f;
 }
 /* line 7, ../sass/screen.scss */
+.zoo-grid.biome-mountain .cell {
+  background-color: #6e8780;
+  border-color: #121715;
+}
+/* line 11, ../sass/screen.scss */
+.zoo-grid.biome-mountain .cell.selected {
+  background-color: #4c5d58;
+}
+/* line 12, ../sass/screen.scss */
+.zoo-grid.biome-mountain .cell.droppable {
+  background-color: #97aaa5;
+}
+/* line 7, ../sass/screen.scss */
 .zoo-grid.biome-moon .cell {
   background-color: #726b68;
   border-color: #070707;
@@ -187,7 +200,7 @@ footer#footer .text-muted {
 .zoo-grid.biome-mars .cell.droppable {
   background-color: #da9d93;
 }
-/* line 91, ../sass/screen.scss */
+/* line 92, ../sass/screen.scss */
 .zoo-grid .drop-target-overlay {
   position: absolute;
   width: 100%;
@@ -197,7 +210,7 @@ footer#footer .text-muted {
   background-color: rgba(230, 230, 230, 0.8);
   transition: 0.1s opacity;
 }
-/* line 100, ../sass/screen.scss */
+/* line 101, ../sass/screen.scss */
 .zoo-grid .drop-target-overlay .title-container {
   position: relative;
   top: 50%;
@@ -206,19 +219,19 @@ footer#footer .text-muted {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 105, ../sass/screen.scss */
+/* line 106, ../sass/screen.scss */
 .zoo-grid .drop-target-overlay .title-container h2 {
   margin: 0;
 }
-/* line 112, ../sass/screen.scss */
+/* line 113, ../sass/screen.scss */
 .zoo-grid.droppable {
   border-color: #000;
 }
-/* line 115, ../sass/screen.scss */
+/* line 116, ../sass/screen.scss */
 .zoo-grid.droppable .drop-target-overlay {
   opacity: 1.0;
 }
-/* line 120, ../sass/screen.scss */
+/* line 121, ../sass/screen.scss */
 .zoo-grid .cell {
   float: left;
   height: 100px;
@@ -231,76 +244,76 @@ footer#footer .text-muted {
   background-position: center;
 }
 @media (max-width: 767px) {
-  /* line 120, ../sass/screen.scss */
+  /* line 121, ../sass/screen.scss */
   .zoo-grid .cell {
     height: 50px;
     width: 50px;
     background-size: 38px;
   }
 }
-/* line 140, ../sass/screen.scss */
+/* line 141, ../sass/screen.scss */
 .zoo-grid .cell:nth-child(5n+1) {
   clear: left;
 }
-/* line 142, ../sass/screen.scss */
+/* line 143, ../sass/screen.scss */
 .zoo-grid .cell:nth-child(5n+1) {
   border-left-width: 2px;
 }
-/* line 143, ../sass/screen.scss */
+/* line 144, ../sass/screen.scss */
 .zoo-grid .cell:nth-child(-n+5) {
   border-top-width: 2px;
 }
-/* line 144, ../sass/screen.scss */
+/* line 145, ../sass/screen.scss */
 .zoo-grid .cell:nth-child(5n) {
   border-right-width: 2px;
 }
-/* line 145, ../sass/screen.scss */
+/* line 146, ../sass/screen.scss */
 .zoo-grid .cell:nth-child(n+24) {
   border-bottom-width: 2px;
 }
-/* line 147, ../sass/screen.scss */
+/* line 148, ../sass/screen.scss */
 .zoo-grid .cell.bux-hint {
   background-color: #c5ffff;
 }
-/* line 148, ../sass/screen.scss */
+/* line 149, ../sass/screen.scss */
 .zoo-grid .cell.best-hint {
   background-color: #ffd725;
 }
-/* line 149, ../sass/screen.scss */
+/* line 150, ../sass/screen.scss */
 .zoo-grid .cell.guaranteed-hint {
   background-color: #ffea8b;
 }
 
 @media (max-width: 767px) {
-  /* line 153, ../sass/screen.scss */
+  /* line 154, ../sass/screen.scss */
   .page-header {
     margin: 10px 0 10px;
   }
-  /* line 157, ../sass/screen.scss */
+  /* line 158, ../sass/screen.scss */
   .page-header h1 {
     text-align: center;
     margin: 0;
   }
 }
 
-/* line 164, ../sass/screen.scss */
+/* line 165, ../sass/screen.scss */
 #zoo-column {
   text-align: center;
 }
 
-/* line 168, ../sass/screen.scss */
+/* line 169, ../sass/screen.scss */
 #roster-container, #zoo-controls {
   text-align: center;
 }
 
-/* line 172, ../sass/screen.scss */
+/* line 173, ../sass/screen.scss */
 #phantom {
   position: absolute;
   height: 50px;
   width: 50px;
   pointer-events: none;
 }
-/* line 180, ../sass/screen.scss */
+/* line 181, ../sass/screen.scss */
 #phantom > div {
   height: 100%;
   width: 100%;
@@ -311,7 +324,7 @@ footer#footer .text-muted {
   background-position: center;
 }
 
-/* line 192, ../sass/screen.scss */
+/* line 193, ../sass/screen.scss */
 .animal-button {
   height: 100px;
   max-width: 100px;
@@ -325,11 +338,11 @@ footer#footer .text-muted {
   background-repeat: no-repeat;
   background-position: center;
 }
-/* line 202, ../sass/screen.scss */
+/* line 203, ../sass/screen.scss */
 .no-touch .animal-button:hover {
   opacity: 0.7;
 }
-/* line 204, ../sass/screen.scss */
+/* line 205, ../sass/screen.scss */
 .no-touch .animal-button.selected, .animal-button.selected {
   opacity: 1.0;
   border-width: 2px;

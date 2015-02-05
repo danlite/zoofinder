@@ -134,6 +134,13 @@ new Animal('Squirrel', 'city', 'rare', [[2,0],[0,1],[1,2]])
 new Animal('Opossum', 'city', 'rare', [[0,0],[0,1],[2,1]])
 new Animal('Sewer Turtle', 'city', 'mythical', [[0,0],[1,0]])
 
+new Animal('Goat', 'mountain', 'common', [[0,0],[0,1],[1,1],[2,1]])
+new Animal('Cougar', 'mountain', 'common', [[0,0],[1,1],[0,2],[2,2]])
+new Animal('Elk', 'mountain', 'common', [[0,0],[2,0],[1,1],[2,1]])
+new Animal('Eagle', 'mountain', 'rare', [[0,0],[0,1],[1,2]])
+new Animal('Coyote', 'mountain', 'rare', [[0,0],[1,0],[2,1]])
+new Animal('Aatxe', 'mountain', 'mythical', [[2,0],[0,1]])
+
 new Animal('Moonkey', 'moon', 'common', [[0,0],[0,1],[2,1],[2,2]])
 new Animal('Lunar Tick', 'moon', 'common', [[1,0],[1,2],[0,3],[2,3]])
 new Animal('Tribble', 'moon', 'common', [[1,0],[0,1],[1,1],[2,1]])
