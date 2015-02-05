@@ -7,6 +7,9 @@ var AnimalButton = (function () {
     self.setSelected(false)
 
     self.element.click(function () {
+      if (self.element.data('disabled'))
+        return
+
       self.setSelected(!self.selected)
     })
 
@@ -153,6 +156,8 @@ var ZooFinder = (function () {
         var phantom = $('#phantom')
         var target = $(event.target)
 
+        target.data('disabled', true)
+
         var x = event.pageX - target.offset().left
         var y = event.pageY - target.offset().top
 
@@ -183,6 +188,10 @@ var ZooFinder = (function () {
 
       onend: function (event) {
         var target = $(event.target)
+
+        _.defer(function () {
+          target.data('disabled', false)
+        })
 
         target.data('x', 0).data('y', 0)
 
