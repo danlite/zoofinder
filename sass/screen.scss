@@ -108,9 +108,9 @@ footer#footer {
   }
 
   border: 2px dashed rgba(0, 0, 0, 0);
-  transition: 0.1s border-color;
 
   &.droppable {
+    transition: 0.1s border-color;
     border-color: #000;
 
     .drop-target-overlay {

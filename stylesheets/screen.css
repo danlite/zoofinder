@@ -42,7 +42,6 @@ footer#footer .text-muted {
   position: relative;
   display: inline-block;
   border: 2px dashed transparent;
-  transition: 0.1s border-color;
 }
 /* line 7, ../sass/screen.scss */
 .zoo-grid.biome-farm .cell {
@@ -223,8 +222,9 @@ footer#footer .text-muted {
 .zoo-grid .drop-target-overlay .title-container h2 {
   margin: 0;
 }
-/* line 113, ../sass/screen.scss */
+/* line 112, ../sass/screen.scss */
 .zoo-grid.droppable {
+  transition: 0.1s border-color;
   border-color: #000;
 }
 /* line 116, ../sass/screen.scss */
