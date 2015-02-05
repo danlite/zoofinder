@@ -44,14 +44,14 @@ var AnimalButton = (function () {
 
 var ZooFinder = (function () {
 
-  var swingCount = 0
-
   var ZooFinder = function (grid) {
     var self = this
+    self.swingCount = 0
+
     var toggleDropTargetOverlay = function (toggle) {
       self.grid.element.toggleClass('droppable front-and-center', toggle)
 
-      if (!toggle || swingCount < 3) {
+      if (!toggle || self.swingCount < 3) {
         self.grid.element.find('.drop-target-overlay h2').toggleClass('swing animated', toggle)
       }
     }
@@ -74,7 +74,7 @@ var ZooFinder = (function () {
 
       ondropactivate: function (event) {
         toggleDropTargetOverlay(true)
-        swingCount++
+        self.swingCount++
         self.grid.element.find('.cell').removeClass('droppable')
         $('html, body').animate({ scrollTop: 0 })
       },
