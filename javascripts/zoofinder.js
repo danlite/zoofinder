@@ -28,13 +28,11 @@ var AnimalButton = (function () {
   AnimalButton.prototype.setAnimal = function (animal) {
     this.animal = animal
 
-    var imagePath = 'images/animals/' + animal.identifier + '.png'
-
     this.element.removeAttr('style')
 
     this.element.data('animal', animal.identifier)
 
-    this.element.css('background-image', 'url(' + imagePath + ')')
+    this.element.css('background-image', 'url(' + animal.imagePath() + ')')
     this.element.text(animal.shortName)
   }
 
@@ -254,6 +252,7 @@ var ZooFinder = (function () {
     if (arrangements.length == 0) {
       this.grid.each(function (cell, col, row) {
         cell.resetHints()
+        cell.setPotentialAnimal(null)
         cell.setText('')
       })
 
@@ -270,6 +269,7 @@ var ZooFinder = (function () {
     //   ...
     // }
     var cellCounts = {}
+    var cellUniqueAnimals = {}
     var maxCount = 0
     var minCount = Infinity
 
@@ -286,6 +286,11 @@ var ZooFinder = (function () {
           
           cellCount += 1
           cellCounts[coord] = cellCount
+
+          if (_.isUndefined(cellUniqueAnimals[coord]))
+            cellUniqueAnimals[coord] = animal
+          else if (cellUniqueAnimals[coord] != animal)
+            cellUniqueAnimals[coord] = false
 
           maxCount = Math.max(maxCount, cellCount)
         })
@@ -316,6 +321,8 @@ var ZooFinder = (function () {
       cell.setText(percent.toFixed() + '%')
 
       cell.resetHints()
+
+      cell.setPotentialAnimal(cellUniqueAnimals[cellIdentifier])
 
       if (cellCount == arrangements.length)
         cell.element.addClass('guaranteed-hint')

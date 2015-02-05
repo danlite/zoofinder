@@ -91,6 +91,7 @@ footer#footer {
 
   .drop-target-overlay {
     position: absolute;
+    z-index: 100;
     width: 100%;
     height: 100%;
     pointer-events: none;
@@ -126,6 +127,8 @@ footer#footer {
     background-color: #eee;
     border: 1px solid #555;
 
+    position: relative;
+
     cursor: pointer;
 
     @include animal;
@@ -138,6 +141,25 @@ footer#footer {
 
     &.selected {
       .text { display: none; }
+    }
+
+    img {
+      width: 100%;
+      padding: 10%;
+
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      top: 50%;
+      @include transform(translateY(-50%));
+
+      display: none;
+
+      &.potential {
+        opacity: 0.5;
+        padding: 25%;
+      }
     }
 
     $grid-size: 5;

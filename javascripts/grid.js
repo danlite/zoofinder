@@ -77,6 +77,7 @@ var ZooGrid = (function () {
     this.each(function (cell) {
       cell.setSelected(false)
       cell.setAnimal(undefined)
+      cell.setPotentialAnimal(undefined)
       cell.resetHints()
     })
   }

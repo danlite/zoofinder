@@ -40,6 +40,10 @@ var Animal = (function () {
     })
   }
 
+  Animal.prototype.imagePath = function () {
+    return 'images/animals/' + this.identifier + '.png'
+  }
+
   Animal.fromShape = function (name, matrix) {
     var tiles = []
     _.each(matrix, function (row, rowIndex) {

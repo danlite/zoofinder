@@ -5,6 +5,7 @@ var GridCell = (function () {
     this.selected = false
     this.element = $('<div>').addClass(GridCell.className)
     this.textElement = $('<span>').addClass('text').appendTo(this.element)
+    this.imageElement = $('<img>').appendTo(this.element)
   }
 
   GridCell.prototype.resetHints = function () {
@@ -26,22 +27,35 @@ var GridCell = (function () {
   }
 
   GridCell.prototype.setAnimal = function (animal) {
-    var imagePath
-
     if (this.animal == animal)
       return;
 
-    this.animal = animal
+    this.setPotentialAnimal(null)
 
-    if (animal)
-      imagePath = 'images/animals/' + animal.identifier + '.png'
+    this.animal = animal
 
     if (!animal)
       this.resetHints()
 
-    this.element.css('background-image', imagePath ? 'url(' + imagePath + ')' : '')
+    this.imageElement.attr('src', animal ? animal.imagePath() : '').toggle(animal ? true : false)
 
     $(this).trigger('change')
+  }
+
+  GridCell.prototype.setPotentialAnimal = function (animal) {
+    var imagePath
+
+    if (this.animal)
+      return
+
+    if (this.potentialAnimal == animal)
+      return
+
+    this.potentialAnimal = animal
+
+    this.imageElement.attr('src', animal ? animal.imagePath() : '')
+      .toggle(animal ? true : false)
+      .toggleClass('potential', animal ? true : false)
   }
 
   GridCell.prototype.setText = function (text) {
