@@ -1,3 +1,5 @@
+var grid, zoofinder;
+
 var shapeInGrid = function() {
   var minRow = grid.rows,
       maxRow = 0,
@@ -58,8 +60,8 @@ $(function() {
     zoofinder.displayProbabilities()
   })
 
-  var grid = new ZooGrid('#zoo')
-  var zoofinder = new ZooFinder(grid)
+  grid = new ZooGrid('#zoo')
+  zoofinder = new ZooFinder(grid)
 
   // animal list
   var latestBiome
@@ -120,7 +122,7 @@ $(function() {
   // animal generation
   $('#generate-output').click(function() {
     var animalName = prompt('Animal name')
-    var output = 'new Animal("' + animalName + '", ' + JSON.stringify(Animal.fromShape(animalName, shapeInGrid()).tiles) + ')' + '\n'
+    var output = 'new Animal(\'' + animalName + '\', undefined, undefined, ' + JSON.stringify(Animal.fromShape(animalName, shapeInGrid()).tiles) + ')' + '\n'
     $('textarea#debug-output').text(output).focus().select()
   })
 })

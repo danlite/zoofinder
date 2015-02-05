@@ -50,7 +50,7 @@ var Animal = (function () {
       })
     })
 
-    return new Animal(name, tiles)
+    return new Animal(name, undefined, undefined, tiles)
   }
 
   var keyedAnimals = {}
